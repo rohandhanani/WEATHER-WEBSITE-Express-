@@ -230,3 +230,36 @@ print("Gaussian Naive Bayes model accuracy(in %):", metrics.accuracy_score(y_tes
 
 
 ------------------------------------------------------------------------------------------------------------------
+
+Apriori
+
+
+
+from mlxtend.preprocessing import TransactionEncoder
+from mlxtend.frequent_patterns import apriori, association_rules
+
+transactions = [
+    ['bread', 'milk', 'eggs'],
+    ['bread', 'butter', 'jelly'],
+    ['milk', 'coffee'],
+    ['bread', 'milk', 'butter'],
+    ['bread', 'coffee']
+]
+
+te = TransactionEncoder()
+te_ary = te.fit(transactions).transform(transactions)
+df = pd.DataFrame(te_ary, columns=te.columns_)
+
+frequent_itemsets = apriori(df, min_support=0.4, use_colnames=True)
+
+rules = association_rules(frequent_itemsets, metric="confidence", min_threshold=0.7
+
+print("Frequent Itemsets:")
+print(frequent_itemsets)
+
+
+print("\nAssociation Rules:")
+print(rules)
+
+
+
