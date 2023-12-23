@@ -1,4 +1,5 @@
 Breadth first search
+
 def bfs(visited, graph, node):
     visited.append(node)
     queue.append(node)
@@ -24,7 +25,13 @@ queue = []
 
 bfs(visited, g, '1')
 
-Depth search 
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+Depth first search 
+
 def dfs(visited, graph, node):
   if node not in visited:
     print(node)
@@ -45,7 +52,14 @@ visited = set()
 
 dfs(visited, graph, '5')
 
-Best first
+
+
+--------------------------------------------------------------------
+
+
+Best first search 
+
+
 from queue import PriorityQueue
 v = 14
 graph = [[] for _ in range(v)]
@@ -83,7 +97,14 @@ target = 9
 print("Best-First Search Result, starting from vertex 1:")
 best_first_search(source, target, v)
 
+
+---------------------------------------------------------------------------------------------------------------
+
+
+
 Linear / decision/ Logistic
+
+
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
@@ -104,7 +125,10 @@ y = le.fit_transform(y)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y,stratify=y,random_state=0)
 
-# Logistic
+
+------------------------------------------    Logistic ---------------------------------------------------------------
+
+
 model = LogisticRegression()
 
 model.fit(X_train,y_train)
@@ -113,7 +137,8 @@ y_pred = model.predict(X_test)
 
 print(y_pred)
 
-# Linear
+--------------------------------------------  Linear  ---------------------------------------------------
+
 model = LinearRegression()
 model.fit(X_train, y_train)
 
@@ -125,7 +150,8 @@ accuracy = accuracy_score(y_test, y_pred_binary)
 print(f"Accuracy: {accuracy}")
 
 
-# Decisiion
+---------------------------------------------------- Decisiion   ----------------------------------------------------------------------
+
 model = DecisionTreeClassifier(random_state = 42)
 model.fit(X_train, y_train)
 
@@ -136,7 +162,12 @@ tree_train = accuracy_score(y_train, y_train_pred)
 tree_test = accuracy_score(y_test, y_test_pred)
 
 print(f'Decision tree train/test accuracies: {tree_train:.3f}/{tree_test:.3f}')
+
+
+---------------------------------------------------------------------------------------------------------------
+
 K – means
+
 import numpy as nm
 import matplotlib.pyplot as mtp
 import pandas as pd
@@ -171,4 +202,3 @@ mtp.ylabel('Spending Score (1-100)')
 mtp.legend()
 mtp.show()
 
-Naïve base :-
